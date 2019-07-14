@@ -1,0 +1,38 @@
+{
+    "manifest_version": 2,
+    "name": "wx",
+    "description": "http请求过滤, 代理设置",
+    "version": "1.0.1",
+    "options_page": "utils.html",
+
+    "browser_action": {
+        "default_icon": "logo.png",
+        "default_title": "黄瓜",
+        "default_popup": "index.html"
+    },
+    "background": {
+        "scripts": [
+            "cache.js"
+        ]
+    },
+
+    "content_scripts": [{
+        "matches": ["http://*/*", "https://*/*"],
+        "js": [
+            "jquery.js",
+            "wx.js"
+        ],
+        "all_frames": true,
+        "run_at": "document_end"
+    }],
+
+    "permissions": [
+        "cookies",
+        "proxy",
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>",
+        "http://*/*",
+        "https://*/*"
+    ]
+}

@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>wx</title>
+    <script src="jquery.js"></script>
+    <style>
+      body {
+          background-color: black;
+          width: 600px;
+          color: white;
+      }
+      input {
+          width: 600px;
+      }
+      #efect {
+          width: 100%;
+          background-color: red;
+      }
+      #delete_all_cookies {
+          background-color: green;
+      }
+      #log {
+          width: 100%;
+          background-color: black;
+          color: green;
+          height: 80px;
+      }
+      hr {
+          color: red;
+          background-color: green;
+      }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label for='domains'>要过滤的域名:</label><br>
+        <input id='domains' type='text' placeholder="例如:cn.mouser.com,baidu.com"/><br>
+
+        <label for='strs'>要过滤的字符串:</label><br>
+        <input id='strs' type='text' placeholder="例如:.png,.jpg,css,js"/><br>
+
+        <label for='prxies'>代理:</label><br>
+        <input id='proxies' type='text' placeholder="例如:http://localhost:8888,http://localhost:9999"/><br>
+        <label for="proxies_bypasslist">不使用代理的域名或ip:</label>
+        <input id='proxies_bypasslist' type='text' placeholder="例如:localhost,cn.mouser.com"/><br>
+
+        <label for='user_agent'>请求头:</label>
+        <select id="user_agent" autocomplete="off">
+            <option id='safari_pc' value='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.1 Safari/605.1.15'>Safari PC</option>
+            <option id='safari_iphone' value="Mozilla/5.0 (IPhone; Intel Mac OS X 10_14_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.1 Safari/605.1.15">Safari IPhone</option>
+            <option id='safari_ipod' value="Mozilla/5.0 (iPod; CPU iPhone OS 11_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.0 Mobile/15E148 Safari/604.1">Safari Ipod</option>
+            <option id='safari_ipad' value="Mozilla/5.0 (iPad; CPU iPhone OS 11_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.0 Mobile/15E148 Safari/604.1">Safari IPad</option>
+            <option id='microsoft_edge' value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299">Microsoft Edge</option>
+            <option id='ie11' value="Mozilla/5.0 (Windows NT 6.3; Win64, x64; Trident/7.0; rv:11.0) like Gecko">IE11</option>
+            <option id='mac_charome' value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36">Mac Chrome</option>
+            <option id='window_chrome' value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36">Window Chrome</option>
+            <option id='mac_firefox' value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0">Mac Firefox</option>
+            <option id='window_firefox' value="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0">Window Firefox</option>
+            <option id='redmi' value='Dalvik/2.1.0 (Linux; U; Android 5.1.1; Redmi 3 MIUI/7.9.7'>红米3手机</option>
+            <option id='default'></option>
+        </select>
+        <br>
+
+        <label for='filter_form_keys'>要过滤的表单的key名称:</label><br>
+        <input id='filter_form_keys' type='text' placeholder="例如:userName,password"><br>
+
+        <label for='filter_form_values'>要过滤的表单对应key的value值:</label><br>
+        <input id='filter_form_values' type='text' placeholder="例如:admin,123456"><br>
+
+        <br><button id='efect'>生效</button>
+        <button id='delete_all_cookies'>清Cookie</button><br>
+        <label for='log'>日志:</label>
+        <textarea id='log' readonly='true' placeholder="输出调试信息"></textarea>
+    </div>
+    <script src="index.js" defer></script>
+</body>
+</html>
