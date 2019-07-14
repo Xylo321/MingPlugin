@@ -1,7 +1,7 @@
 # wx
 为了方便自己研究反爬而开发的工具。
 
-![](https://github.com/zswj123/wx/raw/master/overview.png')
+![](https://github.com/zswj123/wx/blob/master/overview.png?raw=true')
 
 ## 需求:
 1. 根据域名，字符串来使浏览器不发送url中包含这两项的请求;
