@@ -152,7 +152,7 @@ chrome.webRequest.onBeforeRequest.addListener(
                     {
                         for (var z = 0; z < details.requestBody.formData[key].length; z++)
                         {
-                            if (ffvs[j] == details.requestBody.formData[key][z])
+                            if (ffvs[j] != "" && ffvs[j] == details.requestBody.formData[key][z])
                             {
                                 ca = true;
                                 break;
