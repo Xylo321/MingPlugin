@@ -33,7 +33,7 @@ function form_pretty_output(fpop) {
 $('#pretty_json').click(function() {
     var pjp = $('#pretty_json_pre').val();
     var pjpo = JSON.parse(pjp);
-    var pjpa = JSON.stringify(pjpo, null, '\t');
+    var pjpa = JSON.stringify(pjpo, null, '    ');
     $('#pretty_json_aft').val(pjpa);
 });
 
