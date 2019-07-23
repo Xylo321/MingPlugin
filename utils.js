@@ -33,8 +33,9 @@ function form_pretty_output(fpop) {
 $('#pretty_json').click(function() {
     var pjp = $('#pretty_json_pre').val();
     var pjpo = JSON.parse(pjp);
-    var pjpa = JSON.stringify(pjpo, null, '    ');
-    $('#pretty_json_aft').val(pjpa);
+    //var pjpa = JSON.stringify(pjpo, null, '    ');
+    //$('#pretty_json_aft').val(pjpa);
+    $('#pretty_json_aft').jsonViewer(pjpo, { collapsed: false, nl2br: true, recursive_collapser: true });
 });
 
 $('#reg_match').click(function() {

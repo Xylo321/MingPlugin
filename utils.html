@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset='utf-8'/>
         <title>Tool set</title>
-        <link rel="stylesheet" href="utils.wx" />
+        <link rel="stylesheet" href="jquery.json-viewer.css" />
         <script src="jquery.js"></script>
         <style>
           * {
@@ -21,9 +21,22 @@
               text-align: center;
           }
 
-          #pretty_json_pre, #pretty_json_aft {
+          #pretty_json_pre {
               width: 40%;
               height:600px;
+              text-align: left;
+              margin-left: 9%;
+          }
+
+          #pretty_json_aft {
+              width: 40%;
+              height:600px;
+              text-align: left;
+              float: right;
+              border: solid;
+              overflow-x: scroll;
+              overflow-y: scroll;
+              margin-right: 9.5%;
           }
 
           #match_text_pre {
@@ -75,7 +88,11 @@
             <div class='title'><h1>JSON格式化</h1><div>
             <div>
                 <textarea id="pretty_json_pre" placeholder="待格式化的json"></textarea>
+                <!--
                 <textarea id="pretty_json_aft" readonly="true" placeholder="格式化后的json"  wrap="off"></textarea><br>
+                -->
+                <div id="pretty_json_aft"></div><br>
+
                 <button id="pretty_json">格式化</button>
             </div>
         </div>
@@ -166,5 +183,6 @@
         </div>
 
         <script src="utils.js" defer></script>
+        <script src="jquery.json-viewer.js" defer></script>
     </body>
 </html>
