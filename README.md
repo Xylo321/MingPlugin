@@ -1,5 +1,5 @@
 # auxiliary
-为了方便自己研究浏览器反爬而开发的工具。
+(Browser Anti-Climbing Plug-in)为了方便自己研究浏览器反爬而开发的工具。
 
 ## 技术栈
 * javascript
