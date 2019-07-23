@@ -19,7 +19,7 @@
     "content_scripts": [{
         "matches": ["http://*/*", "https://*/*"],
         "js": [
-            "jquery.js",
+            "jquery.js"
         ],
         "all_frames": true,
         "run_at": "document_end"
