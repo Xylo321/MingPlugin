@@ -1,13 +1,13 @@
 {
     "manifest_version": 2,
-    "name": "wx",
-    "description": "http请求过滤, 代理设置",
+    "name": "auxiliary",
+    "description": "浏览器反爬辅助分析",
     "version": "1.0.1",
     "options_page": "utils.html",
 
     "browser_action": {
         "default_icon": "logo.png",
-        "default_title": "黄瓜",
+        "default_title": "浏览器反爬辅助分析",
         "default_popup": "index.html"
     },
     "background": {
