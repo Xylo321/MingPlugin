@@ -35,7 +35,12 @@ $('#pretty_json').click(function() {
     var pjpo = JSON.parse(pjp);
     //var pjpa = JSON.stringify(pjpo, null, '    ');
     //$('#pretty_json_aft').val(pjpa);
-    $('#pretty_json_aft').jsonViewer(pjpo, { collapsed: false, nl2br: true, recursive_collapser: true });
+    $('#pretty_json_aft').jsonViewer(pjpo, {
+        collapsed: false,
+        nl2br: true,
+        recursive_collapser: true,
+        withLinks: false, // 半夜起来优化掉了
+    });
 });
 
 $('#reg_match').click(function() {

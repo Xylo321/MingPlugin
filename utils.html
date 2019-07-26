@@ -88,9 +88,6 @@
             <div class='title'><h1>JSON格式化</h1><div>
             <div>
                 <textarea id="pretty_json_pre" placeholder="待格式化的json"></textarea>
-                <!--
-                <textarea id="pretty_json_aft" readonly="true" placeholder="格式化后的json"  wrap="off"></textarea><br>
-                -->
                 <div id="pretty_json_aft"></div><br>
 
                 <button id="pretty_json">格式化</button>
@@ -102,11 +99,11 @@
             <div>
                 <textarea id="match_text_pre" placeholder="待正则测试的文本"></textarea>
                 <div>
-                    <label for="reg">正则表达式:</label>
-                    <input type="text" id="reg" />
-                    <button id="reg_match">测试</button>
+                    <label for="reg" style="float: left; margin-left: 9.9%;">正则表达式:</label>
+                    <input type="text" id="reg" style="float: left; margin-left: 5px"/>
+                    <button id="reg_match" style="float: left; margin-left: 5px">测试</button>
                 </div>
-                <textarea id="match_text_aft" readonly="true" placeholder="正则表达式匹配后的结果"></textarea>
+                <textarea style="margin-top: 5px;" id="match_text_aft" readonly="true" placeholder="正则表达式匹配后的结果"></textarea>
             </div>
         </div>
 
