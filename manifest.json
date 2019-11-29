@@ -3,7 +3,7 @@
     "name": "auxiliary",
     "description": "浏览器反爬辅助分析",
     "version": "1.0.2",
-    "options_page": "utils.html",
+    "options_page": "option/utils.html",
 
     "browser_action": {
         "default_icon": "logo.png",

@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset='utf-8'/>
+        <title>Tool set</title>
+        <link rel="stylesheet" href="json-viewer.css" />
+        <link rel="stylesheet" href="utils.css" />
+    </head>
+    <body>
+        <div class="root">
+            <div class='title'><h1>JSON格式化</h1><div>
+            <div>
+                <textarea id="pretty_json_pre" placeholder="待格式化的json"></textarea>
+                <div id="pretty_json_aft"></div><br>
+
+                <button id="pretty_json">格式化</button>
+            </div>
+        </div>
+
+        <div class="root">
+            <div class='title'><h1>正则表达式测试</h1></di>
+            <div>
+                <textarea id="match_text_pre" placeholder="待正则测试的文本"></textarea>
+                <div>
+                    <label for="reg" style="float: left; margin-left: 9.9%;">正则表达式:</label>
+                    <input type="text" id="reg" style="float: left; margin-left: 5px"/>
+                    <button id="reg_match" style="float: left; margin-left: 5px">测试</button>
+                </div>
+                <textarea style="margin-top: 5px;" id="match_text_aft" readonly="true" placeholder="正则表达式匹配后的结果"></textarea>
+            </div>
+        </div>
+
+        <div class="root">
+            <div class='title'><h1>时间戳转换</h1></div>
+            <div>
+                <input id="ts" type="text" placeholder="输入要待转换的时间戳"/>
+                <input id="tsc" type="text" placeholder="已经转换的时间戳" readonly="true"/><br>
+                <button id="cts">转换为时间</button>
+            </div>
+        </div>
+
+        <div class="root">
+            <div class='title'><h1>url解码</h1></div>
+            <div>
+                <textarea id="url_decode_pre" placeholder="待解码的字符串"></textarea>
+                <textarea id="url_decode_aft" readonly="true" placeholder="已解码的字符串"></textarea><br>
+                <button id="url_decode">url解码</button>
+            </div>
+        </div>
+
+        <div class="root">
+            <div class='title'><h1>url编码</h1></div>
+            <div>
+                <textarea id="url_encode_pre" placeholder="待编码的字符串"></textarea>
+                <textarea id="url_encode_aft" readonly="true" placeholder="已编码的字符串"></textarea><br>
+                <button id="url_encode">url编码</button>
+            </div>
+        </div>
+
+        <div class="root">
+           <div class='title'><h1>form表单美化输出</h1></div>
+          <div>
+            <textarea id="form_pretty_ouput_pre" placeholder="待美化的form表单"></textarea>
+            <textarea id="form_pretty_ouput_aft" placeholder="已美化的form表单"></textarea><br>
+            <button id="form_pretty_output">美化form表单</button>
+          </div>
+        </div>
+
+        <div class="root">
+            <div class='title'><h1>base64编码</h1></div>
+            <div>
+                <textarea id="base64_encode_pre" placeholder="待编码的字符串"></textarea>
+                <textarea id="base64_encode_aft" readonly="true" placeholder="已编码的字符串"></textarea><br>
+                <button id="base64_encode">base64编码</button>
+            </div>
+        </div>
+
+        <div class="root">
+            <div class='title'><h1>base64解码</h1></div>
+            <div>
+                <textarea id="base64_decode_pre" placeholder="待解码的字符串"></textarea>
+                <textarea id="base64_decode_aft" readonly="true" placeholder="已解码的字符串"></textarea><br>
+                <button id="base64_decode">base64解码</button>
+            </div>
+        </div>
+
+        <div class="root">
+           <div class='title'><h1>16进制加密</h1></div>
+          <div>
+            <textarea id="js_16_encode_pre" placeholder="待加密的字符串"></textarea>
+            <textarea id="js_16_encode_aft" readonly="true" placeholder="已加密的字符串"></textarea><br>
+            <button id="js_16_encode">16进制加密</button>
+          </div>
+        </div>
+
+        <div class="root">
+           <div class='title'><h1>16进制解密</h1></div>
+          <div>
+            <textarea id="js_16_decode_pre" placeholder="待解密的字符串"></textarea>
+            <textarea id="js_16_decode_aft" ereadonly="true" placeholder="已解密的字符串"></textarea><br>
+            <button id="js_16_decode">16进制解密</button>
+          </div>
+        </div>
+
+        <script src="../jquery.js"></script>
+        <script src="utils.js" defer></script>
+        <script src="json-viewer.js" defer></script>
+    </body>
+</html>
