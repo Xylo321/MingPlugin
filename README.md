@@ -1,6 +1,6 @@
 # auxiliary
 (Browser Anti-Climbing Plug-in)为了方便自己研究浏览器反爬而开发的工具。
-![](https://github.com/zswj123/auxiliary/blob/master/logo.png)
+![](https://github.com/zswj123/auxiliary/blob/master/2019-11-29.png)
 
 ## 技术栈
 * javascript
