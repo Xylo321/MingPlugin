@@ -8,8 +8,40 @@
         <link rel="stylesheet" href="utils.css" />
     </head>
     <body>
+        <div class="menu">
+            <ul>
+                <li class="menu_title">功能大全</li>
+                <li>
+                    <a href="#js_16_decode_pre_title">16进制解密</a>
+                </li>
+                <li>
+                    <a href="#js_16_encode_pre_title">16进制加密</a>
+                </li>
+                <li>
+                    <a href="#base64_decode_pre_title">base64解码</a>
+                </li>
+                <li>
+                    <a href="#base64_encode_pre_title">base64编码</a>
+                </li>
+                <li>
+                    <a href="#url_encode_pre_title">url编码</a>
+                </li>
+                <li>
+                    <a href="#url_decode_pre_title">url解码</a>
+                </li>
+                <li>
+                    <a href="#ts_title">时间戳转换</a>
+                </li>
+                <li>
+                    <a href="#match_text_pre_title">正则表达式测试</a>
+                </li>
+                <li>
+                    <a href="#pretty_json_pre_title">json格式化</a>
+                </li>
+            </ul>
+        </div>
         <div class="root">
-            <div class='title'><h1>JSON格式化</h1><div>
+            <div class='title'><h1 id="pretty_json_pre_title">JSON格式化</h1><div>
             <div>
                 <textarea id="pretty_json_pre" placeholder="待格式化的json"></textarea>
                 <div id="pretty_json_aft"></div><br>
@@ -19,7 +51,7 @@
         </div>
 
         <div class="root">
-            <div class='title'><h1>正则表达式测试</h1></di>
+            <div class='title'><h1 id="match_text_pre_title">正则表达式测试</h1></di>
             <div>
                 <textarea id="match_text_pre" placeholder="待正则测试的文本"></textarea>
                 <div>
@@ -32,7 +64,7 @@
         </div>
 
         <div class="root">
-            <div class='title'><h1>时间戳转换</h1></div>
+            <div class='title'><h1 id="ts_title">时间戳转换</h1></div>
             <div>
                 <input id="ts" type="text" placeholder="输入要待转换的时间戳"/>
                 <input id="tsc" type="text" placeholder="已经转换的时间戳" readonly="true"/><br>
@@ -41,7 +73,7 @@
         </div>
 
         <div class="root">
-            <div class='title'><h1>url解码</h1></div>
+            <div class='title'><h1 id="url_decode_pre_title">url解码</h1></div>
             <div>
                 <textarea id="url_decode_pre" placeholder="待解码的字符串"></textarea>
                 <textarea id="url_decode_aft" readonly="true" placeholder="已解码的字符串"></textarea><br>
@@ -50,7 +82,7 @@
         </div>
 
         <div class="root">
-            <div class='title'><h1>url编码</h1></div>
+            <div class='title'><h1 id="url_encode_pre_title">url编码</h1></div>
             <div>
                 <textarea id="url_encode_pre" placeholder="待编码的字符串"></textarea>
                 <textarea id="url_encode_aft" readonly="true" placeholder="已编码的字符串"></textarea><br>
@@ -59,16 +91,7 @@
         </div>
 
         <div class="root">
-            <div class='title'><h1>form表单美化输出</h1></div>
-            <div>
-                <textarea id="form_pretty_ouput_pre" placeholder="待美化的form表单"></textarea>
-                <textarea id="form_pretty_ouput_aft" placeholder="已美化的form表单"></textarea><br>
-                <button id="form_pretty_output">美化form表单</button>
-            </div>
-        </div>
-
-        <div class="root">
-            <div class='title'><h1>base64编码</h1></div>
+            <div class='title'><h1 id="base64_encode_pre_title">base64编码</h1></div>
             <div>
                 <textarea id="base64_encode_pre" placeholder="待编码的字符串"></textarea>
                 <textarea id="base64_encode_aft" readonly="true" placeholder="已编码的字符串"></textarea><br>
@@ -77,7 +100,7 @@
         </div>
 
         <div class="root">
-            <div class='title'><h1>base64解码</h1></div>
+            <div class='title'><h1 id="base64_decode_pre_title">base64解码</h1></div>
             <div>
                 <textarea id="base64_decode_pre" placeholder="待解码的字符串"></textarea>
                 <textarea id="base64_decode_aft" readonly="true" placeholder="已解码的字符串"></textarea><br>
@@ -86,7 +109,7 @@
         </div>
 
         <div class="root">
-            <div class='title'><h1>16进制加密</h1></div>
+            <div class='title'><h1 id="js_16_encode_pre_title">16进制加密</h1></div>
             <div>
                 <textarea id="js_16_encode_pre" placeholder="待加密的字符串"></textarea>
                 <textarea id="js_16_encode_aft" readonly="true" placeholder="已加密的字符串"></textarea><br>
@@ -95,7 +118,7 @@
         </div>
 
         <div class="root">
-            <div class='title'><h1>16进制解密</h1></div>
+            <div class='title'><h1 id="js_16_decode_pre_title">16进制解密</h1></div>
             <div>
                 <textarea id="js_16_decode_pre" placeholder="待解密的字符串"></textarea>
                 <textarea id="js_16_decode_aft" ereadonly="true" placeholder="已解密的字符串"></textarea><br>

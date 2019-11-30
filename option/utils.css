@@ -1,74 +1,102 @@
 * {
-              box-sizing: border-box;
-          }
+  box-sizing: border-box;
+}
 
-          body {
-              color: black;
-              background-color: white;
-          }
+body {
+  color: black;
+  background-color: white;
+}
 
-          .root {
-              width: 100%;
-              text-align: center;
-          }
+.root {
+  width: 100%;
+  text-align: center;
+}
 
-          #pretty_json_pre {
-              width: 40%;
-              height:600px;
-              text-align: left;
-              margin-left: 9%;
-          }
+#pretty_json_pre {
+  width: 40%;
+  height:600px;
+  text-align: left;
+  margin-left: 9%;
+}
 
-          #pretty_json_aft {
-              width: 40%;
-              height:600px;
-              text-align: left;
-              float: right;
-              border: solid;
-              overflow-x: scroll;
-              overflow-y: scroll;
-              margin-right: 9.5%;
-          }
+#pretty_json_aft {
+  width: 40%;
+  height:600px;
+  text-align: left;
+  float: right;
+  border: solid;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  margin-right: 9.5%;
+}
 
-          #match_text_pre {
-              width: 80%;
-              height: 200px;
-          }
+#match_text_pre {
+  width: 80%;
+  height: 200px;
+}
 
-          #match_text_aft {
-              width: 80%;
-              height: 50px;
-          }
+#match_text_aft {
+  width: 80%;
+  height: 50px;
+}
 
-          #reg {
-              width:50%;
-          }
+#reg {
+  width:50%;
+}
 
-          #base64_encode_pre, #base64_encode_aft {
-              width: 40%;
-              height: 150px;
-          }
+#base64_encode_pre, #base64_encode_aft {
+  width: 40%;
+  height: 150px;
+}
 
-          #base64_decode_pre, #base64_decode_aft {
-              width: 40%;
-              height: 150px;
-          }
+#base64_decode_pre, #base64_decode_aft {
+  width: 40%;
+  height: 150px;
+}
 
-          #js_16_encode_pre, #js_16_encode_aft {
-              width: 40%;
-              height: 150px;
-          }
+#js_16_encode_pre, #js_16_encode_aft {
+  width: 40%;
+  height: 150px;
+}
 
-          #js_16_decode_pre, #js_16_decode_aft {
-              width: 40%;
-              height: 150px;
-          }
+#js_16_decode_pre, #js_16_decode_aft {
+  width: 40%;
+  height: 150px;
+}
 
-          #ts, #tsc {
-              width: 40%;
-          }
+#ts, #tsc {
+  width: 40%;
+}
 
-          #form_pretty_ouput_pre, #form_pretty_ouput_aft, #url_encode_pre, #url_encode_aft, #url_decode_pre, #url_decode_aft {
-              width: 40%;
-              height: 150px;
-          }
+#url_encode_pre, #url_encode_aft, #url_decode_pre, #url_decode_aft {
+  width: 40%;
+  height: 150px;
+}
+
+
+.menu {
+    position:fixed;
+    top:20px;
+    left:0px;
+    z-index:999;
+    font-size: 12px;
+}
+
+.menu > ul {
+    list-style-type: none;
+    background-color: white;
+}
+
+.menu > ul > li > a {
+    color: black;
+    text-decoration: none
+}
+
+.menu > ul > li > a:hover {
+    background-color: blue;
+    color: white;
+}
+
+.menu > ul > .menu_title {
+    color: green;
+}

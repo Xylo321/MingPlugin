@@ -24,12 +24,6 @@ function js_16_encode(ep) {
     return monyer;
 }
 
-/**
- * 将form表单字符串美化输出
- */
-function form_pretty_output(fpop) {
-}
-
 $('#pretty_json').click(function() {
     var pjp = $('#pretty_json_pre').val();
     var pjpo = JSON.parse(pjp);
@@ -105,10 +99,4 @@ $('#js_16_decode').click(function() {
     var j16dp = $('#js_16_decode_pre').val();
     var j16da = js_16_decode(j16dp);
     $('#js_16_decode_aft').val(j16da);
-});
-
-$('#form_pretty_output').click(function() {
-    var fpop = $('#form_pretty_output_pre').val();
-    var fpoa = form_pretty_output(fpop);
-    $('#form_pretty_output_aft').val(fpoa);
 });
