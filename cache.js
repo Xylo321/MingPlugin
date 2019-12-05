@@ -62,11 +62,23 @@ chrome.extension.onConnect.addListener(function(port)
                 port.postMessage('清除Cookie成功');
                 break;
 
+            case 'clear_history':
+                clear_history();
+                port.postMessage('清除成功');
+                break;
             default:
                 break;
         }
     })
 });
+
+function clear_history()
+{
+    chrome.history.deleteAll(function()
+    {
+        console.log('清除所有历史');
+    });
+}
 
 function random_proxy()
 {

@@ -105,3 +105,19 @@ $('#delete_all_cookies').click(function()
         $('#log').val('url:' + location.href + '\n清Cookie时:\n' + JSON.stringify(msg));
     });
 });
+
+
+$('#clear_history').click(function()
+{
+    var port = chrome.extension.connect();
+    var msg = {
+        'request': 'clear_history'
+    };
+
+    port.postMessage(msg);
+    port.onMessage.addListener(function(msg)
+    {
+        console.log(msg);
+        $('#log').val(msg);
+    })
+});
