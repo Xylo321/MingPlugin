@@ -2,10 +2,10 @@
  * 将16进制字符串解密成普通字符串
  */
 function js_16_decode(dp) {
-    var monyer = new Array();
-    var s = dp.split("\\");
-    for (i = 1; i < s.length; i++) {
-        s[i] = s[i].replace('x', '');
+    var monyer = '';
+    var s = dp.split(" ");
+    for (i = 0; i < s.length; i++) {
+        s[i] = s[i].replace('0x', '');
         monyer += String.fromCharCode(parseInt(s[i], 16))
     }
     return monyer;
@@ -15,13 +15,13 @@ function js_16_decode(dp) {
  * 将字符串转换为16进制字符串
  */
 function js_16_encode(ep) {
-    var monyer = new Array();
+    var monyer = '';
     var i, s;
     for (i = 0; i < ep.length; i++) {
         s = ep.charCodeAt(i).toString(16);
-        monyer += "\\x" + s;
+        monyer += "0x" + s + ' ';
     }
-    return monyer;
+    return monyer.trim();
 }
 
 $('#pretty_json').click(function() {
@@ -79,13 +79,13 @@ $('#url_encode').click(function() {
 
 $('#base64_encode').click(function() {
     var bep = $('#base64_encode_pre').val();
-    var bea = btoa(bep);
+    var bea = btoa(unescape(encodeURIComponent(bep)));
     $('#base64_encode_aft').val(bea);
 });
 
 $('#base64_decode').click(function() {
     var bdp = $('#base64_decode_pre').val();
-    var bda = atob(bdp).toString();
+    var bda = decodeURIComponent(escape(atob(bdp).toString()));
     $('#base64_decode_aft').val(bda);
 });
 

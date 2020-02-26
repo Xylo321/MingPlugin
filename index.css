@@ -1,7 +1,8 @@
   body {
       background-color: #FFCC99;
       width: 600px;
-      color: black;
+      color: white;
+      background: url('./option/timg.jfif')
   }
   input {
       width: 600px;

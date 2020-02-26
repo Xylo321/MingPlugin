@@ -4,7 +4,7 @@
 
 body {
   color: white;
-  background-color: black;
+  background: url('./timg.jfif');
 }
 
 .root {
@@ -80,7 +80,7 @@ body {
     top: 0;
     left:0px; 
     font-size: 12px;
-    background-color: yellow;
+    background-color: white;
 }
 
 .menu > ul {
@@ -95,12 +95,12 @@ body {
 }
 
 .menu > ul > li > a:hover {
-    background-color: green;
+    background-color: gray;
     color: white;
 }
 
 .menu > ul > .menu_title {
-    color: blue;
+    color: gray;
     font-size: 17px;
     margin-bottom: 5px;
 }
