@@ -4,7 +4,7 @@
 
 body {
   color: white;
-  background: url('./timg.jfif');
+  background: url('../background.gif');
 }
 
 .root {
@@ -77,10 +77,11 @@ body {
 
 .menu {
     position:fixed;
-    top: 0;
-    left:0px; 
+    top: 50%;
+    left:10px;
     font-size: 12px;
     background-color: white;
+    transform: translateY(-50%);
 }
 
 .menu > ul {
