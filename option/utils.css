@@ -29,6 +29,7 @@ body {
   overflow-y: scroll;
   margin-right: 9.5%;
   background-color:white;
+    color: green;
 }
 
 #match_text_pre {

@@ -27,7 +27,9 @@ function js_16_encode(ep) {
 $('#pretty_json').click(function() {
     var pjp = $('#pretty_json_pre').val();
     var pjpo = JSON.parse(pjp);
-    //var pjpa = JSON.stringify(pjpo, null, '    ');
+    var pjpa = JSON.stringify(pjpo, null, '\t');
+    $('#pretty_json_pre').val(pjpa);
+
     //$('#pretty_json_aft').val(pjpa);
     $('#pretty_json_aft').jsonViewer(pjpo, {
         collapsed: false,
