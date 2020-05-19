@@ -35,10 +35,7 @@ chrome.extension.onConnect.addListener(function(port)
                 CACHE.filter_form_keys = filter_form_keys;
                 CACHE.filter_form_values = filter_form_values;
 
-                var proxy = random_proxy();
-                var pbs = parse('proxies_bypasslist');
-                set_proxy(proxy[0], proxy[1], proxy[2], pbs);
-                port.postMessage('设置成功');
+               port.postMessage('设置成功');
                 break;
 
             case 'get_cfg':
@@ -204,6 +201,10 @@ filter_func = function(list, url)
 chrome.webRequest.onBeforeRequest.addListener(
     function(details)
     {
+        var proxy = random_proxy();
+        var pbs = parse('proxies_bypasslist');
+        set_proxy(proxy[0], proxy[1], proxy[2], pbs);
+
         var fds = parse('filter_domains');
         var fss = parse('filter_strs');
         var ffks = parse('filter_form_keys');
@@ -240,7 +241,7 @@ chrome.webRequest.onBeforeRequest.addListener(
             }
         }
 
-        if (ps_dps.length > 0)
+        if (CACHEps_dps.length > 0)
         {
             if (filter_func(ps_dps, details.url))
             {
