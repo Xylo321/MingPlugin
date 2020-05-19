@@ -150,10 +150,6 @@ chrome.webRequest.onBeforeRequest.addListener(
         var ffvs = CACHE.filter_form_values.split(',');
         var ps_dps = CACHE.proxies_donot_passlist.split(',');
         ca = filter_func(fds, details.url) || filter_func(fss, details.url);
-        if (details.url.indexOf('chrome-extension://') >= 0)
-        {
-            ca = false;
-        }
 
         if (details.requestBody != undefined)
         {
@@ -184,10 +180,27 @@ chrome.webRequest.onBeforeRequest.addListener(
             }
         }
 
-        if (ps_dps.length > 0 && filter_func(ps_dps, details.url))
+        if (ps_dps.length > 0)
+        {
+            if (ps_dps.length == 1 && ps_dps[0] == "")
+            {
+                ca = false;
+            }
+            else if (filter_func(ps_dps, details.url))
+            {
+                ca = false;
+            }
+            else
+            {
+                ca = true;
+            }
+        }
+
+        if (details.url.indexOf('chrome-extension://') >= 0)
         {
             ca = false;
         }
+
 
         return {cancel: ca};
     },
