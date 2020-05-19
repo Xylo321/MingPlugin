@@ -57,6 +57,7 @@ $(function()
         $('#strs').val(msg.filter_strs);
         $('#proxies').val(msg.proxies);
         $('#proxies_bypasslist').val(msg.proxies_bypasslist);
+        $('#proxies_donot_passlist').val(msg.proxies_donot_passlist);
         $('#user_agent').val(msg.user_agent);
         $('#filter_form_keys').val(msg.filter_form_keys);
         $('#filter_form_values').val(msg.filter_form_values);
@@ -70,6 +71,7 @@ $('#efect').click(function()
     var filter_strs = $('#strs').val().trim().replace(/ /g, '');
     var proxies = $('#proxies').val().trim().replace(/ /g, '');
     var proxies_bypasslist = $('#proxies_bypasslist').val().trim().replace(/ /g, '');
+    var proxies_donot_passlist = $('#proxies_donot_passlist').val().trim().replace(/ /g, '');
     var user_agent = $('#user_agent').val().trim();
     var filter_form_keys = $('#filter_form_keys').val().trim();
     var filter_form_values = $('#filter_form_values').val().trim();
@@ -80,6 +82,7 @@ $('#efect').click(function()
         'filter_strs': filter_strs,
         'proxies': proxies,
         'proxies_bypasslist': proxies_bypasslist,
+        'proxies_donot_passlist': proxies_donot_passlist,
         'user_agent': user_agent,
         'filter_form_keys': filter_form_keys,
         'filter_form_values': filter_form_values

@@ -3,6 +3,7 @@ CACHE = {
     filter_strs: '',
     proxies: '',
     proxies_bypasslist: '',
+    proxies_donot_passlist: '',
     user_agent: navigator.userAgent,
     filter_form_keys: '',
     filter_form_values: ''
@@ -20,6 +21,7 @@ chrome.extension.onConnect.addListener(function(port)
                 var fss = msg.filter_strs;
                 var ps = msg.proxies;
                 var ps_bps = msg.proxies_bypasslist;
+                var ps_dps = msg.proxies_donot_passlist;
                 var ua = msg.user_agent;
                 var filter_form_keys = msg.filter_form_keys;
                 var filter_form_values = msg.filter_form_values;
@@ -28,6 +30,7 @@ chrome.extension.onConnect.addListener(function(port)
                 CACHE.filter_strs = fss;
                 CACHE.proxies = ps;
                 CACHE.proxies_bypasslist = ps_bps;
+                CACHE.proxies_donot_passlist = ps_dps;
                 CACHE.user_agent = ua;
                 CACHE.filter_form_keys = filter_form_keys;
                 CACHE.filter_form_values = filter_form_values;
@@ -43,6 +46,7 @@ chrome.extension.onConnect.addListener(function(port)
                 var fss = CACHE.filter_strs;
                 var ps = CACHE.proxies;
                 var ps_pbs = CACHE.proxies_bypasslist;
+                var ps_dps = CACHE.proxies_donot_passlist;
                 var ua = CACHE.user_agent;
                 var ffks = CACHE.filter_form_keys;
                 var ffvs = CACHE.filter_form_values;
@@ -51,6 +55,7 @@ chrome.extension.onConnect.addListener(function(port)
                     filter_strs: fss,
                     proxies: ps,
                     proxies_bypasslist: ps_pbs,
+                    proxies_donot_passlist: ps_dps,
                     user_agent: ua,
                     filter_form_keys: ffks,
                     filter_form_values: ffvs
@@ -143,6 +148,7 @@ chrome.webRequest.onBeforeRequest.addListener(
         var fss = CACHE.filter_strs.split(',');
         var ffks = CACHE.filter_form_keys.split(',');
         var ffvs = CACHE.filter_form_values.split(',');
+        var ps_dps = CACHE.proxies_donot_passlist.split(',');
         ca = filter_func(fds, details.url) || filter_func(fss, details.url);
         if (details.url.indexOf('chrome-extension://') >= 0)
         {
@@ -176,6 +182,11 @@ chrome.webRequest.onBeforeRequest.addListener(
 
                 if (ca == true) break;
             }
+        }
+
+        if (ps_dps.length > 0 && filter_func(ps_dps, details.url))
+        {
+            ca = false;
         }
 
         return {cancel: ca};
