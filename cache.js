@@ -241,7 +241,7 @@ chrome.webRequest.onBeforeRequest.addListener(
             }
         }
 
-        if (CACHEps_dps.length > 0)
+        if (ps_dps.length > 0)
         {
             if (filter_func(ps_dps, details.url))
             {
