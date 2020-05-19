@@ -36,7 +36,7 @@ chrome.extension.onConnect.addListener(function(port)
                 CACHE.filter_form_values = filter_form_values;
 
                 var proxy = random_proxy();
-                var pbs = parse_pbs();
+                var pbs = parse('proxies_bypasslist');
                 set_proxy(proxy[0], proxy[1], proxy[2], pbs);
                 port.postMessage('设置成功');
                 break;
@@ -117,16 +117,76 @@ function random_proxy()
     }
 }
 
-function parse_pbs()
+function parse(command)
 {
-    if (CACHE.proxies_bypasslist == '')
+    switch(command)
     {
-        return [];
+        case 'proxies_bypasslist':
+            if (CACHE.proxies_bypasslist == '')
+            {
+                return [];
+            }
+            else
+            {
+                return CACHE.proxies_bypasslist.split(',');
+            }
+            break;
+
+        case 'filter_domains':
+            if (CACHE.filter_domains == '')
+            {
+                return [];
+            }
+            else
+            {
+                return CACHE.filter_domains.split(',');
+            }
+            break;
+        case 'filter_strs':
+            if (CACHE.filter_strs == '')
+            {
+                return [];
+            }
+            else
+            {
+                return CACHE.filter_strs.split(',');
+            }
+            break;
+        case 'filter_form_keys':
+            if (CACHE.filter_form_keys == '')
+            {
+                return [];
+            }
+            else
+            {
+                return CACHE.filter_form_keys.split(',');
+            }
+            break;
+        case 'filter_form_values':
+            if (CACHE.filter_form_values == '')
+            {
+                return [];
+            }
+            else
+            {
+                return CACHE.filter_from_values.split(',');
+            }
+            break;
+        case 'proxies_donot_passlist':
+            if (CACHE.proxies_donot_passlist == '')
+            {
+                return [];
+            }
+            else
+            {
+                return CACHE.proxies_donot_passlist.split(',');
+            }
+            break;
+        default:
+            // TODO
+            break;
     }
-    else
-    {
-        return CACHE.proxies_bypasslist.split(',');
-    }
+
 }
 
 filter_func = function(list, url)
@@ -144,11 +204,11 @@ filter_func = function(list, url)
 chrome.webRequest.onBeforeRequest.addListener(
     function(details)
     {
-        var fds = CACHE.filter_domains.split(',');
-        var fss = CACHE.filter_strs.split(',');
-        var ffks = CACHE.filter_form_keys.split(',');
-        var ffvs = CACHE.filter_form_values.split(',');
-        var ps_dps = CACHE.proxies_donot_passlist.split(',');
+        var fds = parse('filter_domains');
+        var fss = parse('filter_strs');
+        var ffks = parse('filter_form_keys');
+        var ffvs = parse('filter_form_values');
+        var ps_dps = parse('proxies_donot_passlist');
         ca = filter_func(fds, details.url) || filter_func(fss, details.url);
 
         if (details.requestBody != undefined)
@@ -182,11 +242,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 
         if (ps_dps.length > 0)
         {
-            if (ps_dps.length == 1 && ps_dps[0] == "")
-            {
-                ca = false;
-            }
-            else if (filter_func(ps_dps, details.url))
+            if (filter_func(ps_dps, details.url))
             {
                 ca = false;
             }
