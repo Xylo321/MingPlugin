@@ -6,7 +6,7 @@
     "options_page": "option/utils.html",
 
     "browser_action": {
-        "default_icon": "logo.png",
+        "default_icon": "logo.gif",
         "default_title": "浏览器反爬辅助分析",
         "default_popup": "index.html"
     },
