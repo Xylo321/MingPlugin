@@ -75,6 +75,10 @@ body {
   height: 150px;
 }
 
+#image_base64_viewer_pre, #image_render {
+    width: 40%;
+    height: 300px;
+}
 
 .menu {
     position:fixed;

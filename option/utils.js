@@ -102,3 +102,46 @@ $('#js_16_decode').click(function() {
     var j16da = js_16_decode(j16dp);
     $('#js_16_decode_aft').val(j16da);
 });
+
+$("#image_base64_viewer_pre").bind("paste", function(e) {
+        var isChrome = false;
+        if (event.clipboardData || event.originalEvent) {
+            //某些chrome版本使用的是event.originalEvent
+            var clipboardData = (event.clipboardData || event.originalEvent.clipboardData);
+            if(clipboardData.items){
+			// for chrome
+			var  items = clipboardData.items,
+			len = items.length,
+			blob = null;
+			isChrome = true;
+			for (var i = 0; i < len; i++) {
+			    console.log(items[i]);
+			    if (items[i].type.indexOf("image") !== -1) {
+				//getAsFile() 此方法只是living standard firefox ie11 并不支持
+				blob = items[i].getAsFile();
+			    }
+			}
+			if(blob!==null){
+			    var blobUrl=URL.createObjectURL(blob);
+			    //blob对象显示
+			    var reader = new FileReader();
+			    //base64码显示
+			    reader.onload = function (event) {
+				// event.target.result 即为图片的Base64编码字符串
+				var base64_str = event.target.result;
+				console.log(base64_str);
+				$('#image_base64_viewer_pre').val(base64_str);
+				$("#image_render").css({
+					"background": "url(" + base64_str +")",
+					"background-repeat": "no-repeat",
+					"background-size": "contain",
+					"background-position": "center center",
+					"-webkit-background-size": "contain",
+					"-moz-background-size": "contain"
+					});
+			    }
+			    reader.readAsDataURL(blob);
+			}
+		}
+	}
+});

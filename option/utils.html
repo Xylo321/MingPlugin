@@ -36,7 +36,10 @@
                     <a href="#match_text_pre_title">正则表达式测试</a>
                 </li>
                 <li>
-                    <a id="go_pretty_json_pre_title" href="#pretty_json_pre_title">json格式化</a>
+                    <a href="#pretty_json_pre_title">json格式化</a>
+                </li>
+		<li>
+                    <a href="#image_base64_viewer"">图片转base64</a>
                 </li>
             </ul>
         </div>
@@ -127,6 +130,16 @@
                 <button id="js_16_decode">16进制解密</button>
             </div>
         </div>
+
+	<div class="root">
+	  <div class='title'>
+	    <h1 id="image_base64_viewer">图片转base64</h1>
+	    <div>
+	      <textarea id="image_base64_viewer_pre" placeholder="在此处直接粘贴图片文件得到图片base64编码串"></textarea>
+	      <img id="image_render"></img>
+	    </div>
+	  </div>
+	</div>
 
         <script src="../jquery.js"></script>
         <script src="utils.js" defer></script>
