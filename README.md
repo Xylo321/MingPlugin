@@ -4,7 +4,7 @@
 
 ![](http://serv_pro:3000/kael/MingPlugin/raw/master/look.jpg)
 
-可以用它来：
+## XX:
 * 设置代理
 * 设置请求头
 * 拦截参数
@@ -22,12 +22,6 @@
 * 图片转base64
 * JSON格式化
 
-
-## News
-
-* 解决base64不能加密解密中文；
-* 解决了多个代理时不能随机选择一个代理的问题；
-* 增加了图片转base64编码的功能；
 
 ## About Me
 
