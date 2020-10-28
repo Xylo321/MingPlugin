@@ -135,7 +135,7 @@ $("#image_base64_viewer_pre").bind("paste", function(e) {
 					"background": "url(" + base64_str +")",
 					"background-repeat": "no-repeat",
 					"background-size": "contain",
-					"background-position": "center center",
+					"background-position": "center",
 					"-webkit-background-size": "contain",
 					"-moz-background-size": "contain"
 					});
