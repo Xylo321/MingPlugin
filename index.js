@@ -124,3 +124,11 @@ $('#clear_history').click(function()
         $('#log').val(msg);
     })
 });
+
+$('#open_tools').click(function()
+{
+    href = '/option/utils.html';
+    window.open(href);
+});
+
+

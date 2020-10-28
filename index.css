@@ -1,14 +1,20 @@
-  body {
-      background-color: #FFCC99;
-      width: 600px;
-      color: white;
-      background: url('./background.gif')
-  }
-  input {
-      width: 600px;
-  }
-  #log {
-      width: 100%;
-      height: 80px;
-  }
+body {
+	background-color: #FFCC99;
+	width: 600px;
+	color: white;
+	background: url('./logo.gif');
+	background-position:center; 
+}
+input {
+	width: 600px;
+}
+#log {
+	width: 100%;
+	height: 80px;
+}
+
+#open_tools {
+	color: yellow;
+	background-color: blue;
+}
 
