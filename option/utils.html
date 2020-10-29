@@ -33,14 +33,22 @@
                     <a href="#ts_title">时间戳转换</a>
                 </li>
                 <li>
+                    <a href="#get_data_timestamp">获取指定时间的时间戳</a>
+                </li>
+ 
+                <li>
                     <a href="#match_text_pre_title">正则表达式测试</a>
                 </li>
                 <li>
                     <a href="#pretty_json_pre_title">json格式化</a>
                 </li>
-		<li>
+                <li>
                     <a href="#image_base64_viewer"">图片转base64</a>
                 </li>
+                <li>
+                    <a href="#get_color"">获取指定颜色的值</a>
+                </li>
+
             </ul>
         </div>
 
@@ -132,6 +140,13 @@
         </div>
 
 	<div class="root">
+		<div class="title"><h1 id="get_data_timestamp">获取指定时间的时间戳</h1></div>
+		<div>
+			<input type='datetime-local' id='get_data_timestamp_pre'>
+			<input type='text' id='get_data_timestamp_aft' placeholder='获取的时间戳'>
+		</div>
+    </div>
+	<div class="root">
 	  <div class='title'>
 	    <h1 id="image_base64_viewer">图片转base64</h1>
 	    <div>
@@ -140,6 +155,15 @@
 	    </div>
 	  </div>
 	</div>
+
+	<div class="root">
+		<div class="title"><h1 id="get_color">获取颜色的值</h1></div>
+		<div>
+			<input type='color' id='get_color_pre'>
+			<input type='text' id='get_color_aft' placeholder='获取的时间戳'>
+		</div>
+    </div>
+
 
         <script src="../jquery.js"></script>
         <script src="utils.js" defer></script>

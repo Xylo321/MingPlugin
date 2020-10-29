@@ -145,3 +145,14 @@ $("#image_base64_viewer_pre").bind("paste", function(e) {
 		}
 	}
 });
+
+//为了更酷，决定用另一种写法
+document.querySelector('#get_data_timestamp_pre').onchange = function() {
+    var ts = new Date(this.value);
+    document.querySelector('#get_data_timestamp_aft').value = ts.getTime() / 1000;
+}
+
+//为了更酷，决定用另一种写法
+document.querySelector('#get_color_pre').onchange = function() {
+    document.querySelector('#get_color_aft').value = this.value;
+}

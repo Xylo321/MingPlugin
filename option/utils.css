@@ -80,6 +80,10 @@ body {
     height: 300px;
 }
 
+#get_color_pre, #get_color_aft, #get_data_timestamp_pre, #get_data_timestamp_aft {
+    width: 40%;
+}
+
 .menu {
     position:fixed;
     top: 50%;
