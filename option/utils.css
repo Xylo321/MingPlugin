@@ -9,6 +9,7 @@ body {
 
 .root {
   width: 100%;
+  min-width: 1400px;
   text-align: center;
 }
 
@@ -91,6 +92,7 @@ body {
     font-size: 12px;
     background-color: white;
     transform: translateY(-50%);
+	border: solid 2px black;
 }
 
 .menu > ul {
